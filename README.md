@@ -18,9 +18,7 @@ Rakshak is a community-driven web application built to facilitate faster emergen
 
 ---
 
-## 📸 Screenshots
 
-> (Add screenshots here showing homepage, forum, admin panel, SOS popup, etc.)
 
 ---
 
