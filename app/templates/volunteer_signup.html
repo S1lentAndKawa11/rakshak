@@ -1,0 +1,121 @@
+{% extends 'layout.html' %} {% block title %}Volunteer Signup – Rakshak{%
+endblock %} {% block content %}
+<style>
+  body {
+    background-color: #e6e6fa; /* soft pastel green background for full page */
+  }
+
+  .form-section {
+    padding: 50px;
+    margin: 20px auto;
+    background: #90d5ff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  }
+</style>
+<div class="container mt-5 form-section">
+  <h2 class="text-center mb-4">🤝 Become a Volunteer</h2>
+  <form method="POST" action="{{ url_for('volunteer_signup') }}">
+    <div class="row">
+      <div class="col-md-12 mb-3">
+        <label for="name" class="form-label">Full Name</label>
+        <input
+          type="text"
+          name="name"
+          class="form-control"
+          id="name"
+          required
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input
+          type="text"
+          name="phone"
+          class="form-control"
+          id="phone"
+          required
+        />
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="age" class="form-label">Blood Group</label>
+        <input
+          type="text"
+          name="Blood Group"
+          class="form-control"
+          id="group"
+          required
+        />
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="gender" class="form-label">Gender</label>
+        <input
+          type="text"
+          name="Gender"
+          class="form-control"
+          id="gender"
+          required
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 mb-3">
+        <label for="address" class="form-label">City</label>
+        <input
+          type="text"
+          name="City"
+          class="form-control"
+          id="city"
+          required
+        />
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="address" class="form-label">Pincode</label>
+        <input
+          type="text"
+          name="Pincode"
+          class="form-control"
+          id="pincode"
+          required
+        />
+      </div>
+    </div>
+    <div class="mb-3 form-check">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="ncc"
+        name="ncc_cadet"
+        value="Yes"
+      />
+      <label class="form-check-label" for="ncc">I am an NCC Cadet</label>
+    </div>
+    <div class="mb-4">
+      <label class="form-label">Availability</label><br />
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          name="availability"
+          value="Weekdays"
+        />
+        <label class="form-check-label">Weekdays</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          name="availability"
+          value="Weekends"
+        />
+        <label class="form-check-label">Weekends</label>
+      </div>
+    </div>
+    <div class="text-center mb-5">
+      <button type="submit" class="btn btn-success px-4 py-2">Submit</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

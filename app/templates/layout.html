@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Rakshak{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='css/style.css') }}"
+      rel="stylesheet"
+    />
+    <style>
+      .navbar .btn-group {
+        gap: 0.5rem;
+        flex-wrap: nowrap;
+      }
+      .navbar .btn {
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm mb-4">
+      <div
+        class="container d-flex justify-content-between align-items-center"
+        style="max-width: 960px"
+      >
+        <a class="navbar-brand fw-bold" href="/">Rakshak</a>
+        <div class="d-flex btn-group">
+          <!-- <a href="/forum" class="btn btn-outline-secondary">📘 Forum</a> -->
+          <a href="/sos" class="btn btn-danger">🚨 Send SOS</a>
+
+          <!-- <a href="/volunteer_signup" class="btn btn-outline-primary"
+            >Volunteer</a> -->
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">{% block content %}{% endblock %}</div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

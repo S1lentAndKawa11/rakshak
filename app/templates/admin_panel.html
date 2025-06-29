@@ -1,0 +1,60 @@
+{% extends 'layout.html' %} {% block title %}Admin Dashboard – Rakshak{%
+endblock %} {% block content %}
+<style>
+  .dashboard-container {
+    padding: 40px 20px;
+  }
+  .card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s;
+  }
+  .card:hover {
+    transform: scale(1.02);
+  }
+</style>
+
+<div class="dashboard-container">
+  <h2 class="text-center mb-5">🛡️ Admin Dashboard</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div
+        class="card h-100 d-flex flex-column justify-content-between p-4 text-center"
+      >
+        <div>
+          <h5 class="mb-3">👥 View Volunteers</h5>
+        </div>
+        <a href="#" class="btn btn-outline-success mt-3">Go</a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div
+        class="card h-100 d-flex flex-column justify-content-between p-4 text-center"
+      >
+        <div>
+          <h5 class="mb-3">🎁 View Donors</h5>
+        </div>
+        <a href="#" class="btn btn-outline-primary mt-3">Go</a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div
+        class="card h-100 d-flex flex-column justify-content-between p-4 text-center"
+      >
+        <div>
+          <h5 class="mb-3">📖 View Stories</h5>
+        </div>
+        <a href="{{ url_for('forum') }}" class="btn btn-outline-dark mt-3"
+          >Go</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-5">
+    <a href="{{ url_for('admin_logout') }}" class="btn btn-danger px-5"
+      >Logout</a
+    >
+  </div>
+</div>
+{% endblock %}

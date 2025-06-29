@@ -1,0 +1,102 @@
+{% extends "layout.html" %} {% block title %}Sign Up – Rakshak{% endblock %} {%
+block content %}
+
+<style>
+  body {
+    background-color: #e6e6fa; /* soft pastel green background for full page */
+  }
+
+  .signup-card {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 35px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .signup-card h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #343a40;
+  }
+
+  .form-label {
+    font-weight: 500;
+  }
+
+  .form-control {
+    border-radius: 8px;
+  }
+
+  .btn-success {
+    width: 100%;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+
+  .text-link {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .text-link a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .text-link a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<div class="container">
+  <div class="signup-card">
+    <h2>📝 Sign Up</h2>
+    <form method="POST" action="">
+      {{ form.hidden_tag() }}
+
+      <div class="mb-3">
+        {{ form.username.label(class="form-label") }} {{
+        form.username(class="form-control", placeholder="Enter username") }} {%
+        for error in form.username.errors %}
+        <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+      </div>
+
+      <div class="mb-3">
+        {{ form.password.label(class="form-label") }} {{
+        form.password(class="form-control", placeholder="Enter password") }} {%
+        for error in form.password.errors %}
+        <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+      </div>
+
+      <div class="mb-3">
+        {{ form.confirm_password.label(class="form-label") }} {{
+        form.confirm_password(class="form-control", placeholder="Confirm
+        password") }} {% for error in form.confirm_password.errors %}
+        <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+      </div>
+
+      <div class="mb-3">
+        {{ form.role.label(class="form-label") }} {{
+        form.role(class="form-select") }} {% for error in form.role.errors %}
+        <div class="text-danger">{{ error }}</div>
+        {% endfor %}
+      </div>
+
+      <div class="d-grid">
+        <a href="{{ form.submit(class="btn btn-success") }}">
+      </div>
+    </form>
+
+    <div class="text-link">
+      Already have an account?
+      <a href="{{ url_for('signin') }}">Sign In</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

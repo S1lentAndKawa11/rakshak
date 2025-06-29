@@ -1,0 +1,79 @@
+{% extends 'layout.html' %} {% block title %}Share Your Story – Rakshak{%
+endblock %} {% block content %}
+<style>
+  body {
+    background-color: #e6e6fa; /* soft pastel green background for full page */
+  }
+
+  .form-section {
+    padding: 50px;
+    margin: 20px auto;
+    background: #90d5ff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  }
+</style>
+
+<div class="col-md-8 mx-auto mt-5 form-section">
+  <h2 class="mb-4 text-center">📘 Share Your Helping Story</h2>
+  <p class="text-center text-muted mb-4">
+    Your story can inspire others and help NGOs understand your contributions.
+    Anyone can post — no login required.
+  </p>
+
+  <form method="POST" action="/post_story">
+    <div class="mb-3">
+      <label for="name" class="form-label">Your Name </label>
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        id="name"
+        placeholder="E.g., Priya Sharma"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="title" class="form-label">Story Title</label>
+      <input
+        type="text"
+        class="form-control"
+        name="title"
+        id="title"
+        placeholder="E.g., Helped in a Highway Accident"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="category" class="form-label">Category</label>
+      <select class="form-select" name="category" id="category" required>
+        <option value="">-- Select Category --</option>
+        <option value="Accident">Accident</option>
+        <option value="Women's Safety">Women's Safety</option>
+        <option value="Blood Donation">Blood Donation</option>
+        <option value="Natural Disaster">Natural Disaster</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="mb-4">
+      <label for="story" class="form-label">Your Story</label>
+      <textarea
+        class="form-control"
+        name="story"
+        id="story"
+        rows="6"
+        placeholder="Describe what you did and how it helped..."
+        required
+      ></textarea>
+    </div>
+
+    <div class="text-center mb-5">
+      <button type="submit" class="btn btn-primary btn-lg px-4">
+        Submit Story
+      </button>
+    </div>
+  </form>
+</div>
+{% endblock %}

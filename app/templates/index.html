@@ -1,0 +1,98 @@
+{% extends 'layout.html' %} {% block title %}Home – Rakshak{% endblock %} {%
+block content %}
+
+<style>
+  body {
+    background: linear-gradient(135deg, #f7faff, #eef2f5);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1,
+  p {
+    color: #444;
+  }
+
+  .btn span {
+    display: block;
+    text-align: center;
+  }
+
+  .btn span:first-child {
+    font-size: 1.6rem;
+  }
+
+  .btn span:last-child {
+    margin-top: 2px;
+  }
+</style>
+
+<div
+  class="d-flex flex-column justify-content-center align-items-center text-center py-5"
+>
+  <h1 class="mb-4">Welcome to Rakshak</h1>
+  <p class="mb-5 text-muted">
+    Respond faster. Save lives. Empower volunteers and donors through one
+    platform.
+  </p>
+
+  <div class="row justify-content-center mb-4 w-100" style="max-width: 1000px">
+    <div class="col-md-2 mb-3 d-flex align-items-stretch">
+      <a
+        href="{{ url_for('share_story') }}"
+        class="btn btn-outline-primary w-100 py-3 d-flex flex-column justify-content-center align-items-center"
+      >
+        <span>📢</span>
+        <span>Share Story</span>
+      </a>
+    </div>
+    <div class="col-md-2 mb-3 d-flex align-items-stretch">
+      <a
+        href="{{ url_for('forum') }}"
+        class="btn btn-outline-secondary w-100 py-3 d-flex flex-column justify-content-center align-items-center"
+      >
+        <span>📖</span>
+        <span>Forum</span>
+      </a>
+    </div>
+    <div class="col-md-2 mb-3 d-flex align-items-stretch">
+      <a
+        href="{{ url_for('volunteer_signup') }}"
+        class="btn btn-outline-success w-100 py-3 d-flex flex-column justify-content-center align-items-center"
+      >
+        <span>🤝</span>
+        <span>Volunteer</span>
+      </a>
+    </div>
+    <div class="col-md-2 mb-3 d-flex align-items-stretch">
+      <a
+        href="{{ url_for('donor_dashboard') }}"
+        class="btn btn-outline-warning w-100 py-3 d-flex flex-column justify-content-center align-items-center"
+      >
+        <span>🎁</span>
+        <span>Donor</span>
+      </a>
+    </div>
+    <div class="col-md-2 mb-3 d-flex align-items-stretch">
+      <a
+        href="{{ url_for('signin') }}"
+        class="btn btn-outline-info w-100 py-3 d-flex flex-column justify-content-center align-items-center"
+      >
+        <span>🔑</span>
+        <span>Sign In</span>
+      </a>
+    </div>
+    <div class="col-md-2 mb-3 d-flex align-items-stretch">
+      <a
+        href="{{ url_for('signup') }}"
+        class="btn btn-outline-dark w-100 py-3 d-flex flex-column justify-content-center align-items-center"
+      >
+        <span>📝</span>
+        <span>Sign Up</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
